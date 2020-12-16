@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "login-crud-feedit": {
+      "hosting": {
+        "Login": [
+          "login-crud-feedit"
+        ]
+      }
+    }
+  }
+}
