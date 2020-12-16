@@ -5,24 +5,46 @@
     </button>
   
     <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink] ="['/']">Home </a>
+      <ul class="navbar-nav mr-auto" >
+        <li class="nav-item active" style="margin-right: 200%;">
+          <a  class="nav-link" [routerLink] ="['/']">Home </a>
         </li>    
       </ul>
 
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink] ="['/login']">Login </a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link"[routerLink] ="['/']">Logout </a>
+      <ul style="float: right;" class="navbar-nav mx-auto" *ngIf="user$ | async as user; else login">
+        <li class="nav-item" *ngIf="user">
+            <a href="#" class="nav-link"(click)="onLogout()">Logout </a>
           </li>
+     <li class = "nav-item">
+     <a  class = "nav-link" >{{user?.email}}</a>
+     </li>
 
-        <li class="nav-item active">
-            <a class="nav-link" [routerLink] ="['/register']">Register</a>
-          </li>
-     
+
+     <li>
+      <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+          <div class="searchbar">
+            <input class="search_input" type="text" name="" placeholder="Search...">
+            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+          </div>
+        </div>
+      </div>
+     </li>
+
       </ul>
+
+      <ng-template #login>
+
+        <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink ="/login">Login </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink ="/register">Register</a>
+      </li>
+    </ul>
+
+    </ng-template>
     </div>
   </nav>

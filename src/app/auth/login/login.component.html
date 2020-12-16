@@ -4,10 +4,10 @@
             <div class="card-body">
 
                 <h1 class="text-center" style="margin-bottom: 30dp;" >Inicia sesiòn</h1>
-                <form>
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()" >
                     <div class="form-group">
                         <label for="email"> Correo electronico</label>
-                      <input type="email" class="form-control " 
+                        <input type="email" class="form-control" formControlName="email" 
                       id="exampleInputEmail1" aria-describedby="emailHelp" 
                       placeholder="Ingresa correo electronico">                      
                     </div>
@@ -15,15 +15,15 @@
                     <div class="form-group">
 
                         <label for="password">Contraseña</label>
-                      <input type="password" class="form-control"
+                        <input type="password" class="form-control" formControlName="password"
                        id="exampleInputPassword1" 
-                       placeholder="Ingresa contrase単a">
+                       placeholder="Ingresa contraseña">
                     </div>
                     
                     <button type="submit" class="btn btn-dark btn-lg btn-block" >vamos!</button>
                   </form>
                   <div class="form-group mt-3">
-                    <p> No tienes una cuenta? <a [routerLink]="['/register']" > Registrate </a> </p>
+                    <p> ¿No tienes una cuenta? <a [routerLink]="['/register']" > Registrate </a> </p>
                  </div>
 
             </div>
