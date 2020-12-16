@@ -14,9 +14,7 @@ const routes: Routes = [
  
 { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) }, 
  
-{ path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
-  
-  { path: 'create', loadChildren: () => import('./create/create.module').then(m => m.CreateModule) }];
+{ path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

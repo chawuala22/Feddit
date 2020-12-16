@@ -9,6 +9,10 @@ import { AppComponent } from './app.component';
 import {ReactiveFormsModule} from '@angular/forms'
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import{AngularFireDatabaseModule} from '@angular/fire/database';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+
+
 
 
 
@@ -21,7 +25,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,AngularFireModule.initializeApp(environment.firebaseConfig)
-    ,AngularFireAuthModule,
+    ,AngularFireAuthModule,AngularFireDatabaseModule, NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
